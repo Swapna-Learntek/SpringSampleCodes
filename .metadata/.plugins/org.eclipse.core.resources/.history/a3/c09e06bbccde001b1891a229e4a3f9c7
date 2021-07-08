@@ -1,0 +1,9 @@
+package org.learntek.springwithjdbctemplateexample;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class CarDao {
+	
+	private JdbcTemplate jtemplate;
+
+}

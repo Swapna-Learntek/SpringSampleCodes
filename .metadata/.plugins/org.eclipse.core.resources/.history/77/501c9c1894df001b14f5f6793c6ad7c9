@@ -1,0 +1,94 @@
+package org.learntek.springjdbctemplateexample;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.learntek.springjdbctemplateexample.bean.Person;
+import org.learntek.springjdbctemplateexample.configuration.ApplicationConfig;
+import org.learntek.springjdbctemplateexample.services.IPersonService;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        
+        AbstractApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+        IPersonService personService = (IPersonService) ctx.getBean("personService");
+		/*
+		 * Person rama = new Person(1,"Rama","Krishna",45); Person ram = new
+		 * Person(2,"Ram","Krishna",35); Person ramji = new
+		 * Person(3,"Ramji","Krishna",40);
+		 * 
+		 * personService.addPerson(ram); personService.addPerson(ramji);
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * ram.setFirstName("Ramana"); ram.setLastName("R"); ram.setAge(48);
+		 */
+        
+   
+        
+     
+        
+        System.out.println("Again Find All");
+        List<Person> updatedPersons = personService.findAll();
+        for(Person person1:updatedPersons) {
+        	System.out.println(person1);
+        }
+        
+        AppUtil au = new AppUtil();
+        Scanner sc = new Scanner(System.in);
+        char ch = 'y';
+        while(ch == 'y') {
+        	System.out.println("Enter choice of transaction");
+        	System.out.println("add:add person");
+        	System.out.println("edit:edit person");
+        	System.out.println("delete:delte person");
+        	System.out.println("find:find person");
+        	System.out.println("findall:findall person");
+        	String choice = sc.next();
+        	switch (choice) {
+			case "add":
+				Person p = au.readPersonDetails();
+			     personService.addPerson(p);
+				break;
+			case "edit":
+			     System.out.println("Update PersonId = 1");
+			        int updateMe = 1;
+			        personService.editPerson(ram, updateMe);
+				break;
+			case "delete":
+		        System.out.println("Delete PersonId = 3");
+		        int deleteMe = 3;
+		        personService.deletePerson(deleteMe);
+				break;
+			case "find":
+				   System.out.println("Find PersonId = 2");
+			        int findMe = 2;
+			        Person person = personService.find(findMe);
+				break;
+			case "findall":
+			     System.out.println("Find All");
+			        List<Person> persons = personService.findAll();
+			        for(Person person1:persons) {
+			        	System.out.println(person1);
+			        }
+				break;
+
+			default:
+				System.out.println("Not a right choice");
+				break;
+			}
+        }
+        
+    }
+}

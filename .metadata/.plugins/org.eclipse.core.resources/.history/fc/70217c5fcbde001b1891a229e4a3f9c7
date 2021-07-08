@@ -1,0 +1,8 @@
+package org.learntek.springwithjdbctemplateexample;
+
+public class CarMapper {
+
+    public Car map(int idx, ResultSet rs, StatementContext ctx) throws SQLException {
+        return new Car(rs.getInt("Id"), rs.getString("Name"), rs.getInt("Price"),rs.getDate("pdate"));
+    }
+}

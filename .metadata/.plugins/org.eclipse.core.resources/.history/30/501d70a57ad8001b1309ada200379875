@@ -1,0 +1,8 @@
+package org.learntek.springhelloworld;
+
+public class Message {
+	public void sendMessage() {
+		
+	}
+
+}

@@ -1,0 +1,28 @@
+package org.learntek.springjdbctemplateexample;
+
+import org.learntek.springjdbctemplateexample.bean.Person;
+import org.learntek.springjdbctemplateexample.configuration.ApplicationConfig;
+import org.learntek.springjdbctemplateexample.services.IPersonService;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        
+        AbstractApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+        IPersonService personService = (IPersonService) ctx.getBean("personService");
+        Person rama = new Person(1,"Rama","Krishna",45);
+        Person ram = new Person(2,"Ram","Krishna",35);
+        Person ramji = new Person(3,"Ramji","Krishna",40);
+        personService.addPerson(rama);
+        personService.addPerson(ram);
+        personService.addPerson(ramji);
+    }
+}

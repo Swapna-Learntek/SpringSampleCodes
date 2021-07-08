@@ -1,0 +1,10 @@
+package org.learntek.springbeaninitanddestroyexample;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+
+@Configuration
+@ComponentScan(basePackages = )
+public class AppConfig {
+
+}

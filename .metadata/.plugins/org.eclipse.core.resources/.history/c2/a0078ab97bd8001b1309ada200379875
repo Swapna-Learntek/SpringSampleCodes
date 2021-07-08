@@ -1,0 +1,5 @@
+package org.learntek.springhelloworldusingjavaconfig;
+
+public class HelloWorld {
+
+}

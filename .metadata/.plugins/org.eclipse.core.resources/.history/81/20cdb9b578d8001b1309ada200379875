@@ -1,0 +1,13 @@
+package org.learntek.springhelloworld;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello From Main Class!" );
+    }
+}

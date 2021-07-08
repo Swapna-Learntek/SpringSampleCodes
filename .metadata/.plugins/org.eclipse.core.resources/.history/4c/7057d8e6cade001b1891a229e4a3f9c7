@@ -1,0 +1,11 @@
+package org.learntek.springwithjdbctemplateexample;
+
+public class Car {
+	
+	private Long id;
+	private String name;
+	private int price;
+	
+	
+
+}

@@ -1,0 +1,29 @@
+package org.learntek.springwithjdbctemplateexample;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class CarDao {
+	
+	private JdbcTemplate jtemplate;
+	
+	private void setJdbcTemplate(JdbcTemplate jdbctemplate) {
+		this.jtemplate = jdbctemplate;
+	}
+	
+	public int saveCar(Car c) {
+		String query = "insert into car values('"+c.getId()+"','"+c.getName()+"','"+c.getPrice()
+				+ ")";
+		return jtemplate.update(query);
+	}
+	
+	public int updateCar(Car c) {
+		/*
+		 * String query =
+		 * "insert into car values('"+c.getId()+"','"+c.getName()+"','"+c.getPrice() +
+		 * ")";
+		 */
+		String query = "update employee set name = '"+c.getName()+"', price ='"+c.getPrice()+"'where id = '"+c.getId(); 
+		return jtemplate.update(query);
+	}
+
+}

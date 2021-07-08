@@ -1,0 +1,7 @@
+package org.learntek.springhelloworldusingjavaconfig;
+
+public class HelloWorld {
+	public void sayHello() {
+		System.out.println("Welcome to Learntek Spring Course");
+	}
+}

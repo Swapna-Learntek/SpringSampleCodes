@@ -1,0 +1,23 @@
+package org.learntek.springwithjdbctemplateexample;
+
+import javax.sql.DataSource;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        AbstractApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        DataSource ds = (DataSource) ctx.getBean("datasource");
+        
+        Car c = new Car(1,"Lamborghani",500000);
+        
+    }
+}

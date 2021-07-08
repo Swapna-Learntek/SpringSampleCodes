@@ -1,0 +1,49 @@
+DI 
+
+loose coupling and tight coupling
+
+Spring IOC
+
+What is bean and types of bean scopes?
+
+can you explaing few modules of spring framework architecture?
+
+what is the core module in the spring frameworK?
+
+What is the attribute used to specify scope of the bean in beans.xml or spring configuration file?
+scope is the attribute in xml in bean tag to specify bean scope for spring application
+Example:
+======
+<bean id = "helloworld" class="org.learntek.springhelloworld.HelloWorld"  scope="singleton"/>
+
+
+what is the annotation used to specify scope of the bean in Java spring configuration file?
+@Scope
+Example:
+======
+@Configuration
+public class AppConfig {
+	@Bean
+	@Scope("singleton")
+	public HelloWorld helloWorld() {
+		HelloWorld helloWorldBean = new HelloWorld();
+		helloWorldBean.setMessage("welcome to spring course");
+		return helloWorldBean;
+	}
+}
+
+what is the default scope of the bean?
+singleton
+
+what are the scope of the bean applicable only for spring MVC or spring web application?
+request,session,websocket,application
+
+What are the different design patterns used in Spring Framework?
+Singleton => Spring Container used this pattern while creating beans,by default spring creates all beans as singletons
+Proxy => 
+Factory Method => A group of beans are created in the spring container and spring container reads appconfig file or app.xml file to create the beans based on this file.
+Template
+
+
+
+

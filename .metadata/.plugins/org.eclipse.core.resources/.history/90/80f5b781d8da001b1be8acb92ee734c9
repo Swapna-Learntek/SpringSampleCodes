@@ -1,0 +1,5 @@
+package org.learntek.springbeaninitanddestroyexample;
+
+public class AppConfig {
+
+}

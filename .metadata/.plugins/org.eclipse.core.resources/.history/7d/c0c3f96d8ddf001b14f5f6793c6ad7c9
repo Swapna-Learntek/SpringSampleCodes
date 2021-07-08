@@ -1,0 +1,5 @@
+package org.learntek.springjdbctemplateexample.dao;
+
+public interface IPersonDao {
+
+}

@@ -1,0 +1,5 @@
+package org.learntek.springjdbctemplateexample.configuration;
+
+public class ApplicationConfig {
+
+}

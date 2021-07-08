@@ -1,0 +1,11 @@
+package org.learntek.springjdbctemplateexample.bean;
+
+public class Person {
+	
+	private int personId;
+	private String firstName;
+	private String lastName;
+	private int age;
+	
+
+}

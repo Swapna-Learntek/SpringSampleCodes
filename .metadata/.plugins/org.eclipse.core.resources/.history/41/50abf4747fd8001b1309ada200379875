@@ -1,0 +1,16 @@
+package org.learntek.springhelloworldusingjavaconfig;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+	
+	//@Bean
+	public HelloWorld helloWorld() {
+		HelloWorld helloWorldBean = new HelloWorld();
+		helloWorldBean.setMessage("welcome to spring course");
+		return helloWorldBean;
+	}
+
+}
